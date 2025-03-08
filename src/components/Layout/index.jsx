@@ -1,26 +1,32 @@
 import { Outlet, Link } from "react-router-dom";
 import Logo from "../../assets/logo.react.jpg";
+import { IoCartOutline } from "react-icons/io5";
 
 const Layout = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <div className="justify-between">
-        <header className="bg-stone-500 text-white p-4">
-          <img className="aspect-square w-20 h-20" src={Logo} alt="Logo" />
+      <header className="bg-stone-500 text-white p-4 flex justify-between items-center">
+        <div className="flex flex-col items-center">
+          <Link to="/">
+            <img
+              className="aspect-square w-14 h-14 md:w-20 md:h-20"
+              src={Logo}
+              alt="Logo"
+            />
+          </Link>
           <h1>The Loopy Shop</h1>
+        </div>
 
-          <nav className="bg-stone-400 p-4">
-            <ul className="flex gap-4">
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="product">Product</Link>
-              </li>
-            </ul>
-          </nav>
-        </header>
-      </div>
+        <nav className="pr-4 md:pr-12">
+          <ul>
+            <li>
+              <Link to="cart">
+                <IoCartOutline className="text-white text-2xl hover:text-gray-400" />
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </header>
 
       <main className="flex-grow p-4">
         <Outlet /> {/* This is where page content will be injected */}
