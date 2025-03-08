@@ -1,3 +1,5 @@
-export default function NotFound() {
-  return <h1>404 - Page Not Found</h1>;
-}
+const NotFound = () => {
+  return <h2>404 - Page Not Found</h2>;
+};
+
+export default NotFound;

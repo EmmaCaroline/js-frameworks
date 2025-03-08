@@ -2,17 +2,19 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Product from "./components/Product";
 import NotFound from "./components/NotFound";
+import Layout from "./components/Layout";
 
 function App() {
 
   return (
-    <> {/* Comment */}
-    <Routes>
-      <Route index element={<Home />} />
-      <Route path="products" element={<Product />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
-    <h1>Test</h1>
+    <> {/* Fragment */}
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="product" element={<Product />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
     </>
   )
 }

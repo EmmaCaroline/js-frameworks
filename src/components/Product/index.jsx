@@ -1,3 +1,5 @@
-export default function Products() {
-  return <h1>Single Product page</h1>;
-}
+const Products = () => {
+  return <h2>Single Product page</h2>;
+};
+
+export default Products;
