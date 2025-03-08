@@ -1,9 +1,6 @@
 import { CiSearch } from "react-icons/ci";
-import { useState } from "react";
 
-const Search = () => {
-  const [query, setQuery] = useState("");
-
+const Search = ({ query, setQuery }) => {
   return (
     <div className="py-2 w-full sm:w-auto">
       <div className="relative rounded-md shadow-sm w-full">

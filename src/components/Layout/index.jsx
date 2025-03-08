@@ -1,7 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
 import Logo from "../../assets/logo.react.jpg";
 import CartIcon from "../ui/CartIcon";
-import Search from "../ui/Search";
 
 const Layout = () => {
   return (
@@ -22,9 +21,6 @@ const Layout = () => {
             <CartIcon />
           </div>
         </nav>
-        <div className="mt-2 sm:mt-0 w-full flex justify-center sm:w-auto sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2">
-          <Search />
-        </div>
       </header>
 
       <main className="flex-grow p-4">
