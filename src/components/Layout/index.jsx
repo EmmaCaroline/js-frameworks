@@ -33,10 +33,10 @@ const Layout = () => {
       <footer className="bg-gray-800 text-white p-4 text-center">
         <ul>
           <li>
-            <Link to="contact">Contact</Link>
+            <Link to="contact">Contact </Link>
           </li>
         </ul>
-        &copy; 2025 The Loopy Shop
+        <div className="text-sm mt-6">&copy; 2025 The Loopy Shop</div>
       </footer>
     </div>
   );

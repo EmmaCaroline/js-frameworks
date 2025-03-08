@@ -11,8 +11,6 @@ import Layout from "./components/Layout";
 function App() {
   return (
     <>
-      {" "}
-      {/* Fragment */}
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
