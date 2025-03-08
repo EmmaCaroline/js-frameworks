@@ -1,29 +1,30 @@
 import { Outlet, Link } from "react-router-dom";
 import Logo from "../../assets/logo.react.jpg";
 import CartIcon from "../ui/CartIcon";
+import Search from "../ui/Search";
 
 const Layout = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="bg-stone-500 text-white p-4 flex justify-between items-center">
-        <div className="flex flex-col items-center">
-          <Link to="/">
-            <img
-              className="aspect-square w-14 h-14 md:w-20 md:h-20"
-              src={Logo}
-              alt="Logo"
-            />
-          </Link>
-          <h1>The Loopy Shop</h1>
-        </div>
-
-        <nav className="pr-4 md:pr-12">
-          <ul>
-            <li>
-              <CartIcon /> {/* Make dynamic later */}
-            </li>
-          </ul>
+      <header className="bg-stone-400 text-white p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+        <nav className="flex w-full justify-between items-center">
+          <div className="flex flex-col items-center ">
+            <Link to="/">
+              <img
+                className="aspect-square w-14 h-14 md:w-20 md:h-20"
+                src={Logo}
+                alt="Logo"
+              />
+            </Link>
+            <h1 className="text-md md:text-lg">The Loopy Shop</h1>
+          </div>
+          <div className="pr-4 md:pr-12">
+            <CartIcon />
+          </div>
         </nav>
+        <div className="mt-2 sm:mt-0 w-full flex justify-center sm:w-auto sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2">
+          <Search />
+        </div>
       </header>
 
       <main className="flex-grow p-4">
