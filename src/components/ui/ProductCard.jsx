@@ -11,7 +11,7 @@ const ProductCard = ({ product }) => {
   const emptyStars = 5 - fullStars - halfStar;
 
   return (
-    <div className="flex flex-col items-center group my-4 border-gray-300">
+    <div className="flex flex-col items-center group my-4 shadow-md rounded pb-2">
       <div className="relative">
         <img
           src={product.image.url}
@@ -26,22 +26,6 @@ const ProductCard = ({ product }) => {
       </div>
 
       <h2 className="text-lg font-semibold mt-2">{product.title}</h2>
-      <p className="text-gray-700 w-56 xl:w-72">{product.description}</p>
-
-      <div className="mt-4 flex items-center">
-        <span className="text-lg font-semibold text-gray-900">
-          ${product.discountedPrice.toFixed(2)}
-        </span>
-
-        {discount > 0 && (
-          <>
-            <span className="line-through text-gray-500 ml-2">
-              ${product.price.toFixed(2)}
-            </span>
-          </>
-        )}
-      </div>
-
       <div className="flex mt-2">
         {Array(fullStars)
           .fill(<FaStar className="text-yellow-400" />)
@@ -59,6 +43,21 @@ const ProductCard = ({ product }) => {
             <span key={`empty-${index}`}>{star}</span>
           ))}
       </div>
+
+      <div className="mt-4 flex items-center">
+        <span className="text-lg font-semibold text-gray-900">
+          ${product.discountedPrice.toFixed(2)}
+        </span>
+
+        {discount > 0 && (
+          <>
+            <span className="line-through text-gray-500 ml-2">
+              ${product.price.toFixed(2)}
+            </span>
+          </>
+        )}
+      </div>
+      <p className="text-gray-700 w-56 xl:w-72 mt-2">{product.description}</p>
     </div>
   );
 };
