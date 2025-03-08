@@ -1,6 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
 import Logo from "../../assets/logo.react.jpg";
-import { IoCartOutline } from "react-icons/io5";
+import CartIcon from "../ui/CartIcon";
 
 const Layout = () => {
   return (
@@ -20,9 +20,7 @@ const Layout = () => {
         <nav className="pr-4 md:pr-12">
           <ul>
             <li>
-              <Link to="cart">
-                <IoCartOutline className="text-white text-2xl hover:text-gray-400" />
-              </Link>
+              <CartIcon /> {/* Make dynamic later */}
             </li>
           </ul>
         </nav>
