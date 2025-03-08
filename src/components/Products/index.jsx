@@ -16,6 +16,7 @@ const Products = () => {
         setIsLoading(true);
         const response = await fetch(apiURL);
         const json = await response.json();
+        console.log(json);
 
         if (json && json.data && Array.isArray(json.data)) {
           setProducts(json.data);
@@ -52,7 +53,7 @@ const Products = () => {
         setQuery={setQuery}
         filteredProducts={filteredProducts}
       />
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 mt-4">
         {filteredProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
