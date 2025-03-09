@@ -43,7 +43,7 @@ const ContactForm = () => {
     if (validate()) {
       console.log("Form submitted:", formData);
       setIsSubmitted(true);
-      setFormData({ fullName: "", subject: "", email: "", body: "" }); // Reset form
+      setFormData({ fullName: "", subject: "", email: "", body: "" });
     }
   };
 
@@ -58,7 +58,6 @@ const ContactForm = () => {
       )}
 
       <form onSubmit={handleSubmit}>
-        {/* Full Name */}
         <div className="mb-4">
           <label className="block font-medium">Full Name</label>
           <input
@@ -74,7 +73,6 @@ const ContactForm = () => {
           )}
         </div>
 
-        {/* Subject */}
         <div className="mb-4">
           <label className="block font-medium">Subject</label>
           <input
@@ -90,7 +88,6 @@ const ContactForm = () => {
           )}
         </div>
 
-        {/* Email */}
         <div className="mb-4">
           <label className="block font-medium">Email</label>
           <input
@@ -106,7 +103,6 @@ const ContactForm = () => {
           )}
         </div>
 
-        {/* Message Body */}
         <div className="mb-4">
           <label className="block font-medium">Message</label>
           <textarea
@@ -119,7 +115,6 @@ const ContactForm = () => {
           {errors.body && <p className="text-red-500 text-sm">{errors.body}</p>}
         </div>
 
-        {/* Submit Button */}
         <button
           type="submit"
           className="w-full bg-teal-700 text-white py-2 rounded shadow-md hover:bg-teal-600"

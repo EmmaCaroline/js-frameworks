@@ -16,7 +16,6 @@ const Products = () => {
         setIsLoading(true);
         const response = await fetch(apiURL);
         const json = await response.json();
-        console.log(json);
 
         if (json && json.data && Array.isArray(json.data)) {
           setProducts(json.data);
