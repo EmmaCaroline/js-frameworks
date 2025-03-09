@@ -13,7 +13,6 @@ const Checkout = () => {
     cvv: "",
   });
   const [error, setError] = useState("");
-  const [showPopup, setShowPopup] = useState(false);
 
   const handlePaymentChange = (event) => {
     setSelectedPayment(event.target.value);
@@ -43,13 +42,8 @@ const Checkout = () => {
       }
     }
 
-    setShowPopup(true);
     dispatch({ type: "CLEAR_CART" });
-
-    setTimeout(() => {
-      setShowPopup(false);
-      navigate("/success");
-    }, 5000);
+    navigate("/success");
   };
 
   const totalSum = state.items.reduce((sum, item) => {
@@ -172,12 +166,6 @@ const Checkout = () => {
           Proceed to Payment
         </button>
       </form>
-
-      {showPopup && (
-        <div className="fixed bottom-25 left-1/2 transform -translate-x-1/2 bg-green-600 text-white py-3 px-6 rounded-lg shadow-lg animate-fadeIn">
-          Payment successful!
-        </div>
-      )}
     </div>
   );
 };
