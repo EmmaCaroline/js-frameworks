@@ -50,8 +50,6 @@ const Checkout = () => {
     return sum + item.price * item.quantity;
   }, 0);
 
-  console.log("Total Sum:", totalSum);
-
   return (
     <div className="relative">
       <form
