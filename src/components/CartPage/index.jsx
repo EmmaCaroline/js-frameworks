@@ -64,7 +64,7 @@ const CartPage = () => {
             </h3>
             <div className="group">
               <Link to="/checkout">
-                <button className="bg-teal-700 text-white px-6 py-3 rounded shadow-md transition duration-300 ease-linear group-hover:scale-105">
+                <button className="bg-teal-700 text-white px-6 py-3 rounded shadow-md hover:bg-teal-800 transition">
                   Checkout
                 </button>
               </Link>
