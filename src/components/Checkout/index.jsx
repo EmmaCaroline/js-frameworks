@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useCart } from "../ui/CartContext";
 
 const Checkout = () => {
-  const { dispatch } = useCart();
+  const { state, dispatch } = useCart();
   const navigate = useNavigate();
 
   const [selectedPayment, setSelectedPayment] = useState("");
@@ -13,7 +13,6 @@ const Checkout = () => {
     cvv: "",
   });
   const [error, setError] = useState("");
-
   const [showPopup, setShowPopup] = useState(false);
 
   const handlePaymentChange = (event) => {
@@ -53,15 +52,46 @@ const Checkout = () => {
     }, 5000);
   };
 
+  const totalSum = state.items.reduce((sum, item) => {
+    return sum + item.price * item.quantity;
+  }, 0);
+
+  console.log("Total Sum:", totalSum);
+
   return (
     <div className="relative">
       <form
         onSubmit={handleSubmit}
         className="p-6 border rounded-lg shadow-md max-w-md mx-auto"
       >
-        <h2 className="text-xl font-semibold mb-4">Choose Payment Method</h2>
+        <h2 className="text-xl font-semibold mb-4">Checkout</h2>
 
-        <div className="space-y-2">
+        <div className="border-t pt-4">
+          <h3 className="text-lg font-semibold mb-2">Order Summary</h3>
+          <div className="space-y-2">
+            <ul>
+              {state.items.map((item) => (
+                <li key={item.id} className="flex justify-between">
+                  <span>
+                    {item.title} x{item.quantity}
+                  </span>
+                  <span>${(item.price * item.quantity).toFixed(2)}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="flex justify-between mt-4">
+            <span>Shipping</span>
+            <span>Free</span>
+          </div>
+          <div className="flex justify-between mt-4">
+            <span>Total</span>
+            <span>${totalSum.toFixed(2)}</span>
+          </div>
+        </div>
+
+        <div className="space-y-2 mt-4 border-t pt-4">
+          <h3 className="text-lg font-semibold mb-2">Choose Payment Method</h3>
           <label className="flex items-center space-x-2">
             <input
               type="radio"
@@ -137,7 +167,7 @@ const Checkout = () => {
 
         <button
           type="submit"
-          className="mt-4 px-4 py-2 bg-teal-700 text-white rounded-lg shadow hover:bg-teal-800 transition"
+          className="mt-6 px-4 py-2 bg-teal-700 text-white rounded-lg shadow hover:bg-teal-800 transition"
         >
           Proceed to Payment
         </button>
