@@ -1,12 +1,25 @@
-# React + Vite
+# JS Frameworks React CA: Online E-com shop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project setup
 
-Currently, two official plugins are available:
+This project is setup with React + Vite, with React Router and Tailwind CSS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting Started
 
-## Expanding the ESLint configuration
+Follow these steps to set up and run the project locally:
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Install dependencies
+
+- Ensure you have Node.js installed. Then, run:
+  npm install
+
+2. Start the development server
+   npm run dev
+
+3. Open the project in your browser
+
+- Vite will start a development server and provide a local URL (e.g., http://localhost:5173). Open this link in your browser to view the project
+
+4. Build for production (optional)
+
+- npm run build
