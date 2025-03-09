@@ -29,8 +29,8 @@ const ProductCard = ({ product }) => {
           )}
         </div>
 
-        <h2 className="text-lg font-semibold mt-2">{product.title}</h2>
-        <div className="flex mt-2">
+        <h2 className="text-lg font-semibold mt-2 mx-2">{product.title}</h2>
+        <div className="flex mt-2 mx-2">
           {Array(fullStars)
             .fill(<FaStar className="text-yellow-400" />)
             .map((star, index) => (
@@ -48,7 +48,7 @@ const ProductCard = ({ product }) => {
             ))}
         </div>
 
-        <div className="mt-4 flex items-center">
+        <div className="mt-4 flex items-center mx-2">
           <span className="text-lg font-semibold text-gray-900">
             ${product.discountedPrice.toFixed(2)}
           </span>
@@ -61,7 +61,9 @@ const ProductCard = ({ product }) => {
             </>
           )}
         </div>
-        <p className="text-gray-700 w-56 xl:w-72 mt-2">{product.description}</p>
+        <p className="text-gray-700 w-56 xl:w-72 mt-2 mx-2">
+          {product.description}
+        </p>
       </div>
       <Link to={`/product/${product.id}`}>
         <button className="border border-gray-400 px-2 mt-2 shadow-md transition duration-300 ease-linear group-hover:scale-105">

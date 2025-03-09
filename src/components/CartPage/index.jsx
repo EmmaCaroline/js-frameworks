@@ -24,7 +24,8 @@ const CartPage = () => {
   }, 0);
 
   return (
-    <div className="ml-6">
+    <div className="mx-4 sm:mx-6">
+      <h1 className="font-medium text-3xl lg:text-4xl mb-4">Cart</h1>
       {state.items.length === 0 ? (
         <p className="text-gray-600 text-lg">Your cart is empty.</p>
       ) : (
@@ -64,13 +65,13 @@ const CartPage = () => {
             </h3>
             <div className="group">
               <Link to="/checkout">
-                <button className="bg-teal-700 text-white px-6 py-3 rounded shadow-md hover:bg-teal-800 transition">
+                <button className="bg-teal-700 text-white px-4 py-2 rounded shadow-md hover:bg-teal-800 transition">
                   Checkout
                 </button>
               </Link>
             </div>
           </div>
-          <div className="flex justify-end">
+          <div className="flex mx-4 mt-6 sm:justify-end sm:mx-auto">
             {" "}
             <button
               className="bg-red-500 text-white py-2 px-4 rounded-md shadow-md hover:bg-red-600 transition "
