@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FaStar, FaRegStar, FaStarHalfAlt } from "react-icons/fa";
 
 const ProductCard = ({ product }) => {
@@ -60,9 +61,11 @@ const ProductCard = ({ product }) => {
         </div>
         <p className="text-gray-700 w-56 xl:w-72 mt-2">{product.description}</p>
       </div>
-      <button className="border border-gray-400 px-2 mt-2 shadow-md transition duration-300 ease-linear group-hover:scale-105">
-        View product
-      </button>
+      <Link to={`/product/${product.id}`}>
+        <button className="border border-gray-400 px-2 mt-2 shadow-md transition duration-300 ease-linear group-hover:scale-105">
+          View product
+        </button>
+      </Link>
     </div>
   );
 };
