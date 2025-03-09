@@ -29,7 +29,7 @@ const ProductCard = ({ product }) => {
           )}
         </div>
 
-        <h2 className="text-lg font-semibold mt-2 mx-2">{product.title}</h2>
+        <h2 className="text-xl font-semibold mt-2 mx-2">{product.title}</h2>
         <div className="flex mt-2 mx-2">
           {Array(fullStars)
             .fill(<FaStar className="text-yellow-400" />)

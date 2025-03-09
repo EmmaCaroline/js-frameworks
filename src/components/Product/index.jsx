@@ -68,7 +68,7 @@ const Product = () => {
           <p>No image available</p>
         )}
         <div className="flex flex-col w-72 sm:w-auto sm:self-start group">
-          <h2 className="text-lg md:text-xl font-semibold mt-2">
+          <h2 className="text-xl md:text-xl font-semibold mt-2">
             {data.title}
           </h2>
           <div className="flex mt-2">
@@ -108,8 +108,8 @@ const Product = () => {
       </div>
 
       {data.reviews && data.reviews.length > 0 && (
-        <div className="w-full mt-6 max-w-lg mx-auto sm:max-w-xl md:max-w-[702px] lg:max-w-[790px] xl:max-w-[846px]">
-          <h2 className="text-xl font-semibold mb-3">Customer Reviews</h2>
+        <div className="w-full mt-8 mb-6 max-w-lg mx-auto sm:max-w-xl md:max-w-[702px] lg:max-w-[790px] xl:max-w-[846px]">
+          <h2 className="text-lg font-semibold mb-3">Customer Reviews</h2>
           <div className="space-y-4">
             {data.reviews.map((review) => {
               const fullStars = Math.floor(review.rating);
