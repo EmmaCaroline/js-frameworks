@@ -29,7 +29,7 @@ const Layout = () => {
 
       <footer className="bg-gray-800 text-white p-4 text-center">
         <ul>
-          <li>
+          <li className="text-lg">
             <Link to="contact">Contact </Link>
           </li>
         </ul>
