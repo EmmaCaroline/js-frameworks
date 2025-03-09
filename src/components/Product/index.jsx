@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { FaStar, FaRegStar, FaStarHalfAlt } from "react-icons/fa";
+import { IoReturnUpBack } from "react-icons/io5";
 import { useCart } from "../ui/CartContext";
+import { Link } from "react-router-dom";
 
 const Product = () => {
   const [data, setData] = useState(null);
@@ -57,6 +59,9 @@ const Product = () => {
 
   return (
     <div>
+      <Link to="/">
+        <IoReturnUpBack size={30} className="ml-4" />
+      </Link>
       <div className="flex flex-col justify-normal items-center sm:flex-row sm:justify-center sm:gap-x-8 sm:mt-4 md:gap-x-24 lg:gap-x-44 ">
         {data.image && data.image.url ? (
           <img
