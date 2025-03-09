@@ -15,11 +15,13 @@ const ProductCard = ({ product }) => {
     <div className="flex flex-col items-center group my-4 shadow-md rounded pb-3">
       <div className="flex-grow">
         <div className="relative">
-          <img
-            src={product.image.url}
-            alt={product.image.alt}
-            className="w-56 h-56 sm:w-64 sm:h-64 xl:w-80 xl:h-80 aspect-square object-cover rounded-lg transition duration-300 ease-linear group-hover:scale-105 border border-gray-300"
-          />
+          <Link to={`/product/${product.id}`}>
+            <img
+              src={product.image.url}
+              alt={product.image.alt}
+              className="w-56 h-56 sm:w-64 sm:h-64 xl:w-80 xl:h-80 aspect-square object-cover rounded-lg transition duration-300 ease-linear group-hover:scale-105 border border-gray-300"
+            />
+          </Link>
           {discount > 0 && (
             <div className="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 text-xs rounded-full">
               -{discountPercentage}%

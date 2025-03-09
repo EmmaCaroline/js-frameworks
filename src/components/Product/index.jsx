@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { FaStar, FaRegStar, FaStarHalfAlt } from "react-icons/fa";
+import { useCart } from "../ui/CartContext";
 
 const Product = () => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const { id } = useParams();
+  const { dispatch } = useCart();
 
   useEffect(() => {
     async function getData(url) {
@@ -40,6 +42,18 @@ const Product = () => {
   const fullStars = Math.floor(data.rating);
   const halfStar = data.rating % 1 >= 0.5 ? 1 : 0;
   const emptyStars = 5 - fullStars - halfStar;
+
+  const addToCart = () => {
+    dispatch({
+      type: "ADD_TO_CART",
+      payload: {
+        id: data.id,
+        title: data.title,
+        price: data.discountedPrice,
+        image: data.image.url,
+      },
+    });
+  };
 
   return (
     <div>
@@ -84,7 +98,10 @@ const Product = () => {
               ${data.price.toFixed(2)}
             </p>
           )}
-          <button className="bg-teal-700 text-white w-32 py-1 rounded mt-6 transition duration-300 ease-linear group-hover:scale-105">
+          <button
+            onClick={addToCart}
+            className="bg-teal-700 text-white w-32 py-1 rounded mt-6 transition duration-300 ease-linear group-hover:scale-105"
+          >
             Add to cart
           </button>
         </div>

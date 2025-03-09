@@ -1,13 +1,20 @@
 import { Badge } from "@mui/material";
 import { IoCartOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { useCart } from "./CartContext";
 
 const CartIcon = () => {
-  /* Make dynamic later */
+  const { state } = useCart();
+
+  const cartItemsCount = state.items.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+
   return (
-    <Link to="cart">
+    <Link to="/cart">
       <Badge
-        badgeContent={1} /* Make dynamic later */
+        badgeContent={cartItemsCount || 0}
         color="primary"
         overlap="circular"
         anchorOrigin={{
