@@ -78,19 +78,23 @@ const Product = () => {
           </h2>
           <div className="flex mt-2">
             {Array(fullStars)
-              .fill(<FaStar className="text-yellow-400" />)
-              .map((star, index) => (
-                <span key={`full-${index}`}>{star}</span>
+              .fill(null)
+              .map((_, index) => (
+                <span key={`full-${data.id}-star-${index}`}>
+                  <FaStar className="text-yellow-400" />
+                </span>
               ))}
             {halfStar === 1 && (
-              <span key="half">
+              <span key={`half-${data.id}`}>
                 <FaStarHalfAlt className="text-yellow-400" />
               </span>
             )}
             {Array(emptyStars)
-              .fill(<FaRegStar className="text-yellow-400" />)
-              .map((star, index) => (
-                <span key={`empty-${index}`}>{star}</span>
+              .fill(null)
+              .map((_, index) => (
+                <span key={`empty-${data.id}-star-${index}`}>
+                  <FaRegStar className="text-yellow-400" />
+                </span>
               ))}
           </div>
           <p className="text-gray-700 w-56 xl:w-72 mt-2">{data.description}</p>
@@ -131,13 +135,15 @@ const Product = () => {
                     {Array(fullStars)
                       .fill()
                       .map((_, i) => (
-                        <FaStar key={`full-${i}`} />
+                        <FaStar key={`full-${review.id}-${i}`} />
                       ))}
-                    {halfStar === 1 && <FaStarHalfAlt key="half-star" />}
+                    {halfStar === 1 && (
+                      <FaStarHalfAlt key={`half-${review.id}`} />
+                    )}
                     {Array(emptyStars)
                       .fill()
                       .map((_, i) => (
-                        <FaRegStar key={`empty-${i}`} />
+                        <FaRegStar key={`empty-${review.id}-${i}`} />
                       ))}
                   </div>
                   <p className="mt-1 text-gray-700">{review.description}</p>
