@@ -84,8 +84,9 @@ const Checkout = () => {
 
         <div className="space-y-2 mt-4 border-t pt-4">
           <h3 className="text-lg font-semibold mb-2">Choose Payment Method</h3>
-          <label className="flex items-center space-x-2">
+          <label htmlFor="paymentCard" className="flex items-center space-x-2">
             <input
+              id="paymentCard"
               type="radio"
               name="payment"
               value="Credit Card"
@@ -98,7 +99,9 @@ const Checkout = () => {
 
           {selectedPayment === "Credit Card" && (
             <div className="mt-2 space-y-2 p-4 border rounded-md bg-gray-100">
+              <label htmlFor="cardNumber"></label>
               <input
+                id="cardNumber"
                 type="text"
                 name="cardNumber"
                 placeholder="Card Number"
@@ -108,7 +111,9 @@ const Checkout = () => {
                 required
               />
               <div className="flex space-x-2">
+                <label htmlFor="expiryDate"></label>
                 <input
+                  id="expiryDate"
                   type="text"
                   name="expiryDate"
                   placeholder="MM/YY"
@@ -117,7 +122,9 @@ const Checkout = () => {
                   className="w-1/2 px-3 py-2 border rounded"
                   required
                 />
+                <label htmlFor="cvv"></label>
                 <input
+                  id="cvv"
                   type="text"
                   name="cvv"
                   placeholder="CVV"
@@ -130,8 +137,12 @@ const Checkout = () => {
             </div>
           )}
 
-          <label className="flex items-center space-x-2">
+          <label
+            htmlFor="paymentPaypal"
+            className="flex items-center space-x-2"
+          >
             <input
+              id="paymentPaypal"
               type="radio"
               name="payment"
               value="PayPal"
@@ -142,8 +153,9 @@ const Checkout = () => {
             <span>PayPal</span>
           </label>
 
-          <label className="flex items-center space-x-2">
+          <label htmlFor="paymentApple" className="flex items-center space-x-2">
             <input
+              id="paymentApple"
               type="radio"
               name="payment"
               value="Apple Pay"
