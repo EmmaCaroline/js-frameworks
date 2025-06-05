@@ -1,6 +1,20 @@
 import { Link } from "react-router-dom";
 import { FaStar, FaRegStar, FaStarHalfAlt } from "react-icons/fa";
 
+/**
+ * Displays a product card with pricing, discount, rating stars, and a link to the product page.
+ *
+ * @param {Object} props - Component props.
+ * @param {Object} props.product - Product data object.
+ * @param {number} props.product.price - Original price of the product.
+ * @param {number} props.product.discountedPrice - Discounted price of the product.
+ * @param {number} props.product.rating - Product rating (e.g., 4.5).
+ * @param {string} props.product.id - Unique product identifier.
+ * @param {string} props.product.title - Product title/name.
+ * @param {string} props.product.image - Product image URL.
+ *
+ * @returns {JSX.Element} Rendered product card.
+ */
 const ProductCard = ({ product }) => {
   const discount = product.price - product.discountedPrice;
   const discountPercentage =
