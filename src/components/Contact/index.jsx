@@ -1,5 +1,14 @@
 import { useState } from "react";
 
+/**
+ * ContactForm component allows users to submit a contact message.
+ * Includes validation for full name, subject, email, and message body.
+ *
+ * On successful submission, the form is cleared and a success message can be shown.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered contact form.
+ */
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -11,6 +20,11 @@ const ContactForm = () => {
   const [errors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  /**
+   * Validates the form input fields.
+   *
+   * @returns {boolean} Returns true if all fields pass validation, otherwise false.
+   */
   const validate = () => {
     const newErrors = {};
 
@@ -34,10 +48,21 @@ const ContactForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
+  /**
+   * Updates form data as the user types into input fields.
+   *
+   * @param {React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>} e - The change event from the form field.
+   */
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  /**
+   * Handles form submission.
+   * Validates form data and logs it to the console if valid.
+   *
+   * @param {React.FormEvent<HTMLFormElement>} e - The submit event from the form.
+   */
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
