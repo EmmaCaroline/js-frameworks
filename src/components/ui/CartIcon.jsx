@@ -1,8 +1,21 @@
 import { Badge } from "@mui/material";
 import { IoCartOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import { useCart } from "./UseCart";
+import { useCart } from "./useCart";
 
+/**
+ * Displays a shopping cart icon with a badge showing the total number of items in the cart.
+ *
+ * The badge updates dynamically based on the quantity of items in the cart state.
+ *
+ * @component
+ * @returns {JSX.Element} A link wrapping the cart icon with an item count badge.
+ *
+ * @example
+ * ```jsx
+ * <CartIcon />
+ * ```
+ */
 const CartIcon = () => {
   const { state } = useCart();
 
