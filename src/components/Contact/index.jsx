@@ -12,7 +12,7 @@ const ContactForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const validate = () => {
-    let newErrors = {};
+    const newErrors = {};
 
     if (formData.fullName.trim().length < 3) {
       newErrors.fullName = "Full name must be at least 3 characters long.";
