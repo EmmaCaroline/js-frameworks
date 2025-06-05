@@ -2,6 +2,15 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../ui/CartContext";
 
+/**
+ * Checkout component that allows users to select a payment method,
+ * optionally fill in credit card details, and complete the checkout process.
+ *
+ * On successful submission, the cart is cleared and the user is redirected to a success page.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered checkout form.
+ */
 const Checkout = () => {
   const { state, dispatch } = useCart();
   const navigate = useNavigate();
@@ -14,11 +23,21 @@ const Checkout = () => {
   });
   const [error, setError] = useState("");
 
+  /**
+   * Handles changes to the selected payment method.
+   *
+   * @param {React.ChangeEvent<HTMLInputElement>} event - The change event from the payment option input.
+   */
   const handlePaymentChange = (event) => {
     setSelectedPayment(event.target.value);
     setError("");
   };
 
+  /**
+   * Handles input changes for credit card details.
+   *
+   * @param {React.ChangeEvent<HTMLInputElement>} event - The change event from a credit card input field.
+   */
   const handleCardChange = (event) => {
     setCardDetails({
       ...cardDetails,
@@ -26,6 +45,12 @@ const Checkout = () => {
     });
   };
 
+  /**
+   * Handles form submission for the checkout process.
+   * Validates input, clears the cart, and redirects to the success page.
+   *
+   * @param {React.FormEvent<HTMLFormElement>} event - The form submit event.
+   */
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -46,6 +71,11 @@ const Checkout = () => {
     navigate("/success");
   };
 
+  /**
+   * The total cost of all items in the cart.
+   *
+   * @type {number}
+   */
   const totalSum = state.items.reduce((sum, item) => {
     return sum + item.price * item.quantity;
   }, 0);
