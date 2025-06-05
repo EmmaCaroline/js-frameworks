@@ -2,9 +2,24 @@ import { CiSquareRemove } from "react-icons/ci";
 import { useCart } from "../ui/CartContext";
 import { Link } from "react-router-dom";
 
+/**
+ * Renders the Cart page displaying items added to the cart,
+ * allowing users to remove individual items, clear the entire cart,
+ * and proceed to checkout.
+ *
+ * Uses `useCart` context to access and update cart state.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered cart page.
+ */
 const CartPage = () => {
   const { state, dispatch } = useCart();
 
+  /**
+   * Dispatches an action to remove a specific item from the cart.
+   *
+   * @param {string|number} id - The ID of the item to remove.
+   */
   const removeFromCart = (id) => {
     dispatch({
       type: "REMOVE_FROM_CART",
@@ -12,12 +27,20 @@ const CartPage = () => {
     });
   };
 
+  /**
+   * Dispatches an action to clear all items from the cart.
+   */
   const clearCart = () => {
     dispatch({
       type: "CLEAR_CART",
     });
   };
 
+  /**
+   * Calculates the total price of all items in the cart.
+   *
+   * @type {number}
+   */
   const totalSum = state.items.reduce((sum, item) => {
     return sum + item.price * item.quantity;
   }, 0);
