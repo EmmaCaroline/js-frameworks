@@ -11,21 +11,19 @@ import { CartProvider } from "./components/ui/CartContext";
 
 function App() {
   return (
-    <>
-      <CartProvider>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Products />} />
-            <Route path="product/:id" element={<Product />} />
-            <Route path="contact" element={<ContactForm />} />
-            <Route path="cart" element={<CartPage />} />
-            <Route path="checkout" element={<Checkout />} />
-            <Route path="success" element={<Success />} />
-            <Route path="*" element={<NotFound />} />
-          </Route>
-        </Routes>
-      </CartProvider>
-    </>
+    <CartProvider>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Products />} />
+          <Route path="product/:id" element={<Product />} />
+          <Route path="contact" element={<ContactForm />} />
+          <Route path="cart" element={<CartPage />} />
+          <Route path="checkout" element={<Checkout />} />
+          <Route path="success" element={<Success />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </CartProvider>
   );
 }
 
