@@ -1,6 +1,6 @@
 # JS Frameworks CA
 
-![Screenshot of the app](assets/screenshot_loopyshop.png)
+![Screenshot of the app](src/assets/screenshot_loopyshop.png)
 
 Online E-com shop
 
