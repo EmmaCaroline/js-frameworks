@@ -59,8 +59,11 @@ const ContactForm = () => {
 
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
-          <label className="block font-medium">Full Name</label>
+          <label htmlFor="fullName" className="block font-medium">
+            Full Name
+          </label>
           <input
+            id="fullName"
             type="text"
             name="fullName"
             value={formData.fullName}
@@ -74,8 +77,11 @@ const ContactForm = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block font-medium">Subject</label>
+          <label htmlFor="subject" className="block font-medium">
+            Subject
+          </label>
           <input
+            id="subject"
             type="text"
             name="subject"
             value={formData.subject}
@@ -89,8 +95,11 @@ const ContactForm = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block font-medium">Email</label>
+          <label htmlFor="email" className="block font-medium">
+            Email
+          </label>
           <input
+            id="email"
             type="email"
             name="email"
             value={formData.email}
@@ -104,8 +113,11 @@ const ContactForm = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block font-medium">Message</label>
+          <label htmlFor="body" className="block font-medium">
+            Message
+          </label>
           <textarea
+            id="body"
             name="body"
             value={formData.body}
             onChange={handleChange}
