@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useCart } from "../ui/CartContext";
+import { useCart } from "../ui/UseCart";
 
 /**
  * Checkout component that allows users to select a payment method,

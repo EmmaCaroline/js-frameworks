@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { FaStar, FaRegStar, FaStarHalfAlt } from "react-icons/fa";
 import { IoReturnUpBack } from "react-icons/io5";
-import { useCart } from "../ui/CartContext";
+import { useCart } from "../ui/UseCart";
 import { Link } from "react-router-dom";
 
 /**

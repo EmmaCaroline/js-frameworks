@@ -1,7 +1,7 @@
 import { Badge } from "@mui/material";
 import { IoCartOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import { useCart } from "./CartContext";
+import { useCart } from "./UseCart";
 
 const CartIcon = () => {
   const { state } = useCart();

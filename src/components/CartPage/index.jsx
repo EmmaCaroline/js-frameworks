@@ -1,5 +1,5 @@
 import { CiSquareRemove } from "react-icons/ci";
-import { useCart } from "../ui/CartContext";
+import { useCart } from "../ui/UseCart";
 import { Link } from "react-router-dom";
 
 /**

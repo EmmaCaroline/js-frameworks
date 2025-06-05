@@ -1,8 +1,20 @@
-import { createContext, useContext, useReducer, useEffect } from "react";
+import { createContext, useReducer, useEffect } from "react";
 import { cartReducer, initialState } from "./CartReducer";
 
-const CartContext = createContext();
+/**
+ * React context for managing shopping cart state.
+ * Provides access to cart items and dispatch actions.
+ */
+export const CartContext = createContext();
 
+/**
+ * CartProvider wraps the app and provides cart state and dispatch via context.
+ *
+ * @component
+ * @param {Object} props - The component props.
+ * @param {React.ReactNode} props.children - Child components that need access to the cart context.
+ * @returns {JSX.Element} The context provider with cart state and dispatch.
+ */
 export const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(cartReducer, initialState);
 
@@ -16,5 +28,3 @@ export const CartProvider = ({ children }) => {
     </CartContext.Provider>
   );
 };
-
-export const useCart = () => useContext(CartContext);
