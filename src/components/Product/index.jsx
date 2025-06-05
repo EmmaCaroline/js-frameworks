@@ -5,6 +5,14 @@ import { IoReturnUpBack } from "react-icons/io5";
 import { useCart } from "../ui/CartContext";
 import { Link } from "react-router-dom";
 
+/**
+ * Product component fetches and displays detailed information about a single product
+ * from the Noroff API based on the product ID from the route. It allows users to
+ * view the product rating visually with stars and add the product to the cart.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered product page.
+ */
 const Product = () => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -12,6 +20,12 @@ const Product = () => {
   const { id } = useParams();
   const { dispatch } = useCart();
 
+  /**
+   * Fetches product data from the Noroff API when the component mounts
+   * or the product ID changes.
+   *
+   * @param {string} url - The API endpoint to fetch product data from.
+   */
   useEffect(() => {
     async function getData(url) {
       try {
@@ -45,6 +59,9 @@ const Product = () => {
   const halfStar = data.rating % 1 >= 0.5 ? 1 : 0;
   const emptyStars = 5 - fullStars - halfStar;
 
+  /**
+   * Dispatches an action to add the current product to the cart.
+   */
   const addToCart = () => {
     dispatch({
       type: "ADD_TO_CART",
