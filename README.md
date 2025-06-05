@@ -10,28 +10,41 @@ This project is a React-based online shop built as part of a school assignment t
 
 ## Built With
 
-This project is setup with React + Vite, with React Router and Tailwind CSS
-https://react.dev/
+- [React](https://react.dev/) – JavaScript library for building user interfaces
+- [Vite](https://vitejs.dev/) – Fast build tool and development server
+- [React Router](https://reactrouter.com/) – Routing library for React applications
+- [Tailwind CSS](https://tailwindcss.com/) – Utility-first CSS framework for styling
 
 ## Getting Started
 
 Follow these steps to set up and run the project locally:
 
-1. Clone the repo:
+1. **Clone the repository**
+
+   ```bash
    git clone git@github.com:EmmaCaroline/js-frameworks.git
+   ```
 
-2. Install dependencies
+2. **Install dependencies**
 
-- Ensure you have Node.js installed. Then, run:
-  npm install
+   Ensure you have Node.js installed. Then run:
 
-3. Start the development server
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**
+
+   ```bash
    npm run dev
+   ```
 
-4. Open the project in your browser
+4. **Open the project in your browser**
 
-- Vite will start a development server and provide a local URL (e.g., http://localhost:5173). Open this link in your browser to view the project
+   Vite will start a development server and provide a local URL (e.g., http://localhost:5173). Open this link in your browser to view the project.
 
-5. Build for production (optional)
+5. **Build for production (optional)**
 
-- npm run build
+   ```bash
+   npm run build
+   ```
